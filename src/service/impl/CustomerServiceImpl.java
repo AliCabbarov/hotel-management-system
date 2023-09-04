@@ -61,7 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
         ReservationHelperService.getInstance().setReservationProcessesForUpdateReservation(customer, room, reservationMoney, endReservationDate);
         Reservation reservation = new Reservation(++ReservationHelperService.reservationId, customer.getEmail(), room.getRoomNumber(), reservationMoney, HelperService.getInstance().now(), endReservationDate, true);
         GlobalData.reservations.add(reservation);
-        return new BaseResponse<Reservation>().of(200, "sSuccess", reservation);
+        return new BaseResponse<Reservation>().of(200, "Success", reservation);
     }
 
     @Override
